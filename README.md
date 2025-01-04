@@ -1,4 +1,3 @@
-```markdown
 # Data Visualization and Collection Tool
 
 This project is a Flask-based web application designed to visualize and manage data from an Excel file. It supports data with URLs for images, allowing users to view the images and interact with the data using a collection system.
