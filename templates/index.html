@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<title>Collector</title>
+{% endblock %}    
+
+{% block body %}
+<div class="content">
+    <h1>Collector</h1>
+    <table>
+        {% for row_group in data %}
+        <tr>
+            {% for row in row_group %}
+            <td>
+                <h3>{{ row['name'] }}</h3>
+                <div>
+                    <img src="{{ row['image'] }}" alt="{{ row['name'] }}" style="width:100px; height:auto;">
+                </div>
+                <form action="/?page={{ page }}" method="POST" style="margin-top: 10px;">
+                    <input type="hidden" name="item_index" value="{{ row['item_index'] }}">
+                    <input type="checkbox" name="collect_value" value="1" 
+                           {% if row['collect'] == 1 %}
+                           checked
+                           {% endif %}
+                           onchange="this.form.submit()">
+                </form>
+            </td>
+            {% endfor %}
+        </tr>
+        {% endfor %}
+    </table>
+
+    <!-- Pagination -->
+    <div style="text-align: center; margin-top: 20px;">
+        {% if page > 1 %}
+        <a href="/?page={{ page - 1 }}" class="btn">Previous</a>
+        {% endif %}
+        {% if page < total_pages %}
+        <a href="/?page={{ page + 1 }}" class="btn">Next</a>
+        {% endif %}
+    </div>
+</div>
+{% endblock %}
