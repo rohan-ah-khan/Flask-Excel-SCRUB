@@ -14,11 +14,11 @@ This project is a Flask-based web application designed to visualize and manage d
 
 1. Clone the repository:
    ```bash
-   git clone <repository-url>
+   git clone https://github.com/rohan-ah-khan/Flask-Excel-SCRUB
    ```
 2. Navigate to the project directory:
    ```bash
-   cd your-repository
+   cd Flask-Excel-SCRUB
    ```
 3. Install required dependencies:
    ```bash
@@ -85,6 +85,3 @@ The `data.xlsx` file should be structured as follows:
 - Add advanced filtering and sorting options.
 - Enable file upload to dynamically replace the data source.
 - Enhance the UI for better usability and responsiveness.
-
-
-```
